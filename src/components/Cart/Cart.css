@@ -1,0 +1,63 @@
+.cart-wrapper {
+  display: flow-root;
+  padding-top: 80px;
+}
+
+.product {
+  text-align: center;
+  padding: 15px 0;
+}
+
+.product .img {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.product .img img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.btns {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.btns button {
+  cursor: pointer;
+}
+
+.details {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+p {
+  display: block;
+  text-align: center;
+  /* margin-left:650px; */
+}
+
+
+.total {
+  text-align: center;
+}
+
+.clear-pay-buttons {
+  text-align: center;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.title {
+  color: #3a2508;
+}
+
+.summary-title {
+  text-align: center;
+}

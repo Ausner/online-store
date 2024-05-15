@@ -1,0 +1,18 @@
+.about-container {
+    text-align: center;
+    width: 50%;
+    justify-content: center;
+    padding-top: 180px;
+    margin-left: 25%;
+    margin-right: 80px;
+    margin-bottom: 13%;
+}
+
+p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+h1{
+    color: #3a2508;
+}

@@ -1,0 +1,21 @@
+.product-view-container {
+    padding: 80px;
+}
+
+.image-description{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.product-view-buttons {
+    text-align: center;
+}
+
+.p-p {
+    padding-top: 100px;
+}
+
+.p-view-button {
+    margin: 30px;
+}

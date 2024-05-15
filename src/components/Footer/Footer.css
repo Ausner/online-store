@@ -1,0 +1,37 @@
+.Footer {
+    margin-top: 50px;
+    color: white;
+    font-weight: bold;
+    background-color: #3a2508;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+.left-section{
+    width: 45%;
+    text-align: center;
+}
+
+
+.rigth-section {
+    width: 45%;
+    text-align: center;
+
+}
+
+.middle-section {
+    width: 10%;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+p {
+    font-size: 14px;
+}
