@@ -78,7 +78,7 @@ export const Cart = () => {
     return prev + p.product.price * p.qty;
   }, 0);
 
-  useEffect(() => { console.log("CART SET EFFECT"); if (cart.length > 0) { localStorage.setItem('Cart', JSON.stringify(cart)) } }, [cart]);
+  useEffect(() => { if (cart.length > 0) { localStorage.setItem('Cart', JSON.stringify(cart)) } }, [cart]);
 
 
   return (

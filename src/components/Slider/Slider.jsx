@@ -12,27 +12,39 @@ import 'swiper/css/navigation';
 
 export const Slider = ({ category, sectionName, filter, search }) => {
     const [products, setProducts] = useState(data);
-    console.log("Filter: ", filter)
-    console.log("Search: ", search)
+
+    const availableProducts = () => {
+        const productsFiltered =  products.filter(p => p.category === category);
+        let data = [];
+        switch (filter) {
+            case "Name":
+                data =  productsFiltered.filter(p => p.name.substring(0, search.length).toLowerCase() === search.toLowerCase())
+                return data.length > 0;
+            case "Producer":
+                data =  productsFiltered.filter(p => p.producer.substring(0, search.length).toLowerCase() === search.toLowerCase())
+                return data.length > 0;
+            case "Price":
+                data = productsFiltered.filter(p => p.price.toString().substring(0, search.length).toLowerCase() === search.toLowerCase())
+                return data.length > 0;
+        }
+    }
 
     const filterByName = (product) => {
-        console.log("product.name.toLowerCase(): ", product.name.toLowerCase())
-        console.log("search.toLowerCase(): ", search.toLowerCase())
-        if (product.name.toLowerCase().includes(search.toLowerCase())) {
+        if (product.name.substring(0, search.length).toLowerCase() === search.toLowerCase()) {
             return true;
         }
         return false;
     }
 
     const filterByProducer = (product) => {
-        if (product.producer.toLowerCase().includes(search.toLowerCase())) {
+        if (product.producer.substring(0, search.length).toLowerCase() === search.toLowerCase()) {
             return true;
         }
         return false;
     }
 
     const filterByPrice = (product) => {
-        if (product.price.toString().toLowerCase().includes(search.toLowerCase())) {
+        if (product.price.toString().substring(0, search.length).toLowerCase() === search.toLowerCase()) {
             return true;
         }
         return false;
@@ -42,7 +54,7 @@ export const Slider = ({ category, sectionName, filter, search }) => {
         <div className="section-container">
             {
 
-                ((filter !== "Category") || (filter === "Category" && category.toLowerCase().includes(search?.toLowerCase()))) ? (
+                ((filter === "Category" && category.toLowerCase().includes(search?.toLowerCase())) || (filter === "All") || (filter !== "All" && !search) || (availableProducts())) ? (
                     <>
                         <h1 className="section-title">{sectionName}</h1>
                         <div className="s-container">
@@ -62,7 +74,7 @@ export const Slider = ({ category, sectionName, filter, search }) => {
                                         return (
                                             <span>
                                                 {
-                                                    ((filter === "All") || (filter !== "All" && !search) || (filter === "Name" && filterByName(product)) || (filter === "Producer" && filterByProducer(product)) || (filter === "Price" && filterByPrice(product))) ? (
+                                                    ((filter === "All" || filter === "Category") || (filter !== "All" && !search) || (filter === "Name" && filterByName(product)) || (filter === "Producer" && filterByProducer(product)) || (filter === "Price" && filterByPrice(product))) ? (
                                                         <SwiperSlide className="card" key={id}>
                                                             <Card id={product.id} image={product.image} category={product.category} name={product.name} description={product.description} price={product.price} producer={product.producer}></Card>
                                                         </SwiperSlide>

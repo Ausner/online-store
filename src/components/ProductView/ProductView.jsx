@@ -16,8 +16,6 @@ export const ProductView = () => {
         if (previousCartData) {
             const cartData = JSON.parse(previousCartData);
             setCart(cartData)
-            console.log("pr: ", cartData)
-            console.log("id: ", id)
             cartData.map((p) => {
                 if (p.product.id == id) {
                     setproductCount(p.qty);
