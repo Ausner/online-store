@@ -3,6 +3,7 @@ import "./CartNotification.css";
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import cartImage from "../../assets/cart.png";
 
 export const CartNotification = () => {
     const [cart, setCart] = useState([]);
@@ -30,7 +31,7 @@ export const CartNotification = () => {
                     <Link to="/cart">
                         <div className="cart-container">
                             <h3>{cart.length}</h3>
-                            <img width="80px" src="../../assets/cart.png" />
+                            <img width="80px" src={cartImage} />
                         </div>
                     </Link>
 
@@ -38,7 +39,7 @@ export const CartNotification = () => {
                     <>
                         <div className="cart-container" onClick={() => displayNotification()}>
                             <h3>{cart.length}</h3>
-                            <img width="80px" src="../../assets/cart.png" />
+                            <img width="80px" src={cartImage} />
                         </div>
                         <ToastContainer
                             position="top-right"
