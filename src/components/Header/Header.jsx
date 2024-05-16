@@ -2,6 +2,7 @@ import React from "react";
 import './Header.css';
 import { CartNotification } from "../CartNotification/CartNotification";
 import { Link } from 'react-router-dom';
+import Logo from "../../assets/logo.svg"
 
 
 export const Header = () => {
@@ -9,7 +10,7 @@ export const Header = () => {
         <>
             <div id="navlist" >
                 <Link to="/">
-                    <img width={20} src="../../assets/logo.svg"/> <b>AM Store</b>
+                    <img width={20} src={Logo}/> <b>AM Store</b>
                 </Link>
                 <div className="links">
                     <Link to="/about">About Us</Link>
