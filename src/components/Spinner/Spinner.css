@@ -9,7 +9,8 @@
   }
   
   .loader {
-    border: 16px solid #3498db;
+    /* border: 16px solid #3498db; */
+    border: 16px solid #000000;
     border-top: 16px solid #884c00;
     border-radius: 50%;
     width: 60px;
@@ -17,6 +18,10 @@
     animation: spin 2s linear infinite;
   }
   
+.loading-text {
+  margin-left: 10px;
+}
+
   @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
