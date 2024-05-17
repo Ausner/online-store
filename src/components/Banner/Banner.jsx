@@ -15,7 +15,7 @@ export const Banner = () => {
 
     return (
         <div className="banner-container animate__animated  animate__fadeIn">
-            <div className="banner" style={{'background-image': BannerImage} }>
+            <div className="banner">
                 <div className="banner-text">
                     <h2>WHATEVER YOU WANT IN ONE PLACE!</h2>
                     <h1>SALE</h1>
